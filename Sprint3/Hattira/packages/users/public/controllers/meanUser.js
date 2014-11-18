@@ -29,18 +29,10 @@ angular.module('mean.users')
       $scope.global = Global;
       $scope.global.registerForm = false;
       $scope.input = {
-        type: 'password',
         placeholder: 'Password',
         confirmPlaceholder: 'Repeat Password',
         iconClass: '',
         tooltipText: 'Show password'
-      };
-
-      $scope.togglePasswordVisible = function() {
-        $scope.input.type = $scope.input.type === 'text' ? 'password' : 'text';
-        $scope.input.placeholder = $scope.input.placeholder === 'Password' ? 'Visible Password' : 'Password';
-        $scope.input.iconClass = $scope.input.iconClass === 'icon_hide_password' ? '' : 'icon_hide_password';
-        $scope.input.tooltipText = $scope.input.tooltipText === 'Show password' ? 'Hide password' : 'Show password';
       };
 
       // Register the login() function
