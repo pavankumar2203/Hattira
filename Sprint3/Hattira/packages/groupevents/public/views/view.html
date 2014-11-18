@@ -1,0 +1,76 @@
+  <div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
+
+    </div>
+    <div class="col-md-10">
+      
+<section data-ng-controller="EventsController" data-ng-init="findOne()">
+
+        <div class="form showeventform">
+
+  <form name="groupForm" class="form-horizontal col-md-6 groupForm" role="form" data-ng-submit='create(groupForm.$valid)'novalidate>
+    <div class="form-group" ng-class="{ 'has-error' : submitted && groupForm.name.$invalid }">
+      <label class="col-md-5 control-label"> Event Name</label>
+      <div class="col-md-7">
+        
+          <h2>{{event.name}}</h2>
+
+                  <div data-ng-if="hasAuthorization(event)">
+          <a class="btn" href="/#!/events/{{event._id}}/edit">
+            <i class="glyphicon glyphicon-edit"></i>
+          </a>
+          <a class="btn" data-ng-click="remove(event);">
+            <i class="glyphicon glyphicon-trash"></i>
+          </a>
+        </div>
+
+    </div>
+    <div class="form-group" ng-class="{ 'has-error' : submitted && groupForm.description.$invalid }">
+      <label mean-token="'create-description'" for="description" class="col-md-5 control-label">Event Description</label>
+      <div class="col-md-7">
+            <div>{{event.description}}</div>
+      </div>
+    </div>
+
+
+    <div class="form-group" ng-class="{ 'has-error' : submitted && groupForm.event_time.$invalid }">
+      <label mean-token="'create-event_time'"  class="col-md-5 control-label"> Event time</label>
+      <div class="col-md-7">
+            <div>{{event.event_time}}</div>
+      </div>
+    </div>
+
+
+    <div class="form-group" ng-class="{ 'has-error' : submitted && groupForm.venue.$invalid }">
+      <label mean-token="'create-venue'"  class="col-md-5 control-label"> Venue Name</label>
+      <div class="col-md-7">
+        
+          <div>{{event.venue}}</div>
+      </div>
+    </div>
+
+    <div class="form-group" ng-class="{ 'has-error' : submitted && groupForm.speakers.$invalid }">
+      <label mean-token="'create-speakers'"  class="col-md-5 control-label"> Speakers</label>
+      <div class="col-md-7">
+              <div>{{event.speakers}}</div>
+      </div>
+    </div>
+  
+      <div class="button_register">
+        <button mean-token="'create-submit'" type="submit" class="submit_button" style=" margin-left: 100px;    margin-top: 10px;">RSVP</button>
+      </div>
+
+  </form>
+</div>
+</section>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+

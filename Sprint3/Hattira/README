@@ -1,0 +1,11 @@
+Welcome to Hattira!
+
+- Setup -
+* sudo npm install
+* bower install
+* grunt
+* install mongo and start by "mongod"
+* http://localhost:3000/
+
+
+- Tests -

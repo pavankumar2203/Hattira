@@ -1,0 +1,81 @@
+<div data-ng-show="global.authenticated">
+
+<section class="welcome container-fluid" data-ng-controller="IndexController" data-ng-init="fillnumbers()">
+
+    <div class="col-md-12 row">
+    <div class="info col-md-12">
+      <div class="docs">
+        <div class="welcome-sprite"></div>
+
+        <h3>Hi there !</h3>
+        <h3>You have {{events}} events !</h3>
+
+              <div class="parentdiv">
+    <div data-ng-repeat="event in eventsList" class="childdiv">
+      <span>{{event.event_time | date:'medium'}}</span> 
+        <h2><a data-ng-href="#!/groupevents/{{event._id}}">{{event.name}}</a></h2>
+      <div>{{event.description}}</div>
+    </div>
+  </div>
+
+      </div>
+
+<div class="community">
+      <div class="container-fluid">
+  <div class="row community">
+        
+      <div class="col-md-4 boxes">
+        <h2>Your groups</h2>
+        <div class="circleBase type1">
+          <h2 class="numbers">{{subscribedgroups}}</h2>
+        </div>
+      </div>
+      <div class="col-md-4 boxes">
+        <h2>groups around you</h2>
+        <div class="circleBase type1">
+        <h2 class="numbers">{{groupsaround}}</h2>
+      </div>
+      </div>
+            <div class="col-md-4 boxes">
+        <h2>Upcoming Events</h2>
+        <div class="circleBase type1">
+        <h2 class="numbers">{{events}}</h2>
+      </div>
+      </div>
+  </div>
+     </div>
+   </div>
+    </div>
+  
+        <div class="info col-md-12">
+    <h2>Recommended Groups</h2>
+    <hr>
+      <div class="parentdiv">
+    <div data-ng-repeat="group in groups" class="childdiv">
+      <span>{{group.created | date:'medium'}}</span> 
+      <span>{{group.user.name}}</span>
+        <h2><a data-ng-href="#!/groups/{{group._id}}">{{group.name}}</a></h2>
+      <div>{{group.content}}</div>
+    </div>
+  </div>
+  </div>
+
+
+  </div>
+</section>
+</div>
+
+<div  data-ng-hide="global.authenticated">
+  <section class="welcome container-fluid" >
+    <div class="logo">
+    <img src="/theme/assets/img/hattira.png">
+  </div>
+    <div class="col-md-12 first">
+  Hattira is a platform where you can create groups for people with similar interests and hosts events where one can meet each other face to face.
+  We have set out on this journey to revolutionalize the local community and help people around the world to self-organize.
+  </div>
+  <a ui-sref='auth.register'>    <div class="logo">
+    <img src="/theme/assets/img/joinnow.png">
+  </div></a>
+</section>
+</div>

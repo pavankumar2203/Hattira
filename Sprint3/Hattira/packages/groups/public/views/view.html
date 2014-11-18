@@ -1,0 +1,59 @@
+
+
+
+<section data-ng-controller="GroupsController" data-ng-init="findOne()">
+
+  <section class="welcome container-fluid" >
+
+    <div class="col-md-12 row">
+    <div class="info col-md-12">
+      <div class="docs">
+
+
+<div class="parentdiv" style="height: 600px;">
+    <div  class="childdivgroup">
+  
+  <label class="col-md-5 control-label">Group Name :</label>
+  <h2 class="col-md-7">{{group.name}}</h2>
+    <div data-ng-if="hasAuthorization(group)">
+    <a class="btn" href="/#!/groups/{{group._id}}/edit">
+      <i class="glyphicon glyphicon-edit"></i>
+    </a>
+    <a class="btn" data-ng-click="remove(group);">
+      <i class="glyphicon glyphicon-trash"></i>
+    </a>
+  </div>
+
+      <label class="col-md-5 control-label">Group Description :</label>
+      <div>{{group.description}}</div>
+
+      <div class="">
+      <a href="/#!/groupevents/{{group._id}}/create"><button type="submit" class="btn-success btn">Create Event</button></a>
+    </div>
+
+     <hr>
+        <div class="welcome-sprite"></div>
+ <h3>List of events !</h3>
+ <hr>
+
+<div class="parentdiv">
+    <div data-ng-repeat="groupevent in groupeventslist | filter:searchText" class="childdiv">
+        <span>{{groupevent.created | date:'medium'}}</span>
+        <h2><a data-ng-href="#!/groupevents/{{groupevent._id}}">{{groupevent.name}}</a></h2>
+      <div>{{groupevent.description}}</div>
+              <span>
+            <a class="btn" data-ng-click="RSVP(groupevent);">
+          RSVP
+          </a>
+        </span>
+    </div>
+</div>
+    
+    </div>
+</div>
+</div>
+    
+    </div>
+</div>
+</section>
+</section>
