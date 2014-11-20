@@ -15,7 +15,7 @@ module.exports = {
     callbackURL: 'http://localhost:3000/auth/facebook/callback'
   },
   twitter: {
-    clientID: 'DEFAULT_CONSUMER_KEY',
+    clientID: '2Z2P5MzmcAbDWFTFyr6VTq1GK',
     clientSecret: 'CONSUMER_SECRET',
     callbackURL: 'http://localhost:3000/auth/twitter/callback'
   },
