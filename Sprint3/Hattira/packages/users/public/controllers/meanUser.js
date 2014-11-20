@@ -77,19 +77,6 @@ angular.module('mean.users')
         tooltipTextConfirmPass: 'Show password'
       };
 
-      $scope.togglePasswordVisible = function() {
-        $scope.input.type = $scope.input.type === 'text' ? 'password' : 'text';
-        $scope.input.placeholder = $scope.input.placeholder === 'Password' ? 'Visible Password' : 'Password';
-        $scope.input.iconClass = $scope.input.iconClass === 'icon_hide_password' ? '' : 'icon_hide_password';
-        $scope.input.tooltipText = $scope.input.tooltipText === 'Show password' ? 'Hide password' : 'Show password';
-      };
-      $scope.togglePasswordConfirmVisible = function() {
-        $scope.input.type = $scope.input.type === 'text' ? 'password' : 'text';
-        $scope.input.placeholderConfirmPass = $scope.input.placeholderConfirmPass === 'Repeat Password' ? 'Visible Password' : 'Repeat Password';
-        $scope.input.iconClassConfirmPass = $scope.input.iconClassConfirmPass === 'icon_hide_password' ? '' : 'icon_hide_password';
-        $scope.input.tooltipTextConfirmPass = $scope.input.tooltipTextConfirmPass === 'Show password' ? 'Hide password' : 'Show password';
-      };
-
       $scope.register = function() {
         $scope.usernameError = null;
         $scope.registerError = null;
