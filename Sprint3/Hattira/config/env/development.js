@@ -17,7 +17,7 @@ module.exports = {
   twitter: {
     clientID: '2Z2P5MzmcAbDWFTFyr6VTq1GK',
     clientSecret: 'CONSUMER_SECRET',
-    callbackURL: 'http://localhost:3000/auth/twitter/callback'
+    callbackURL: 'http://hattira.herokuapp.com'
   },
   github: {
     clientID: 'DEFAULT_APP_ID',
