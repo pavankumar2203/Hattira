@@ -50,7 +50,7 @@
     <div class="form-group" ng-class="{ 'has-error' : submitted && groupForm.venue.$invalid }">
       <label mean-token="'create-venue'"  class="col-md-3 control-label"> Venue Name</label>
       <div class="col-md-9">
-        <input name="venue" type="text" class="form-control" data-ng-model="venue" id="venue" placeholder="Venue of Event" required>
+        <input name="venue" type="text" ng-autocomplete class="form-control" options="options" details="details" data-ng-model="venue" id="venue" placeholder="Venue of Event" required>
         <div ng-show="submitted && groupForm.venue.$invalid" class="help-block">
           <p ng-show="groupForm.venue.$error.required">venue is required</p>
         </div>

@@ -1,8 +1,10 @@
 'use strict';
 
-angular.module('mean.groupevents').controller('EventsController', ['$scope', '$stateParams', '$location', 'Global', 'GroupEvents',
+angular.module('mean.groupevents',['ngAutocomplete']).controller('EventsController', ['$scope', '$stateParams', '$location', 'Global', 'GroupEvents',
   function($scope, $stateParams, $location, Global, GroupEvents) {
     $scope.global = Global;
+    $scope.details = '';
+    $scope.options = '';
 
     $scope.hasAuthorization = function(event) {
       if (!event || !event.user) return false;

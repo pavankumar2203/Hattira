@@ -7,6 +7,7 @@
       "bower_components/build/js/dist.min.js": [
         "bower_components/angular/angular.js",
         "bower_components/angular-chosen-localytics/chosen.js",
+        "bower_components/ngAutocomplete/src/ngAutocomplete.js",
         "bower_components/angular-ui/autocomplete.js",
         "bower_components/angular-mocks/angular-mocks.js",
         "bower_components/angular-cookies/angular-cookies.js",
