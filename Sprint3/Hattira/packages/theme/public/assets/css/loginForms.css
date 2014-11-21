@@ -110,7 +110,7 @@ background: url("/theme/assets/img/bg.png");
     width: 440px;
     height: 100%;
     float: left;
-    padding: 34px 0 0 27px;
+    padding: 10px 0 0 10px;
 }
 
 .login-form__left h2, .forgot_password_form h2 {
