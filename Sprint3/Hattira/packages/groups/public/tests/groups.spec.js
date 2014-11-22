@@ -41,6 +41,56 @@
         $location = _$location_;
 
       }));
+      it('$scope.find() should create an array with at least one group object ' +
+        'fetched from XHR', function() {
+	   $httpBackend.when('GET', 'keywords').respond([]);
+          // test expected GET request
+          $httpBackend.expectGET('groups').respond([{
+            name: 'Python nerds',
+            description: 'This is a group for Pythonistas'
+          }]);
+
+          // run controller
+          scope.find();
+          $httpBackend.flush();
+
+          // test scope value
+          expect(scope.groups).toEqualData([{
+            name: 'Python nerds',
+            description: 'This is a group for Pythonistas'
+          }]);
+
+        });
+
+      it('$scope.update(true) should update a valid group', inject(function(Groups) {
+	$httpBackend.when('GET', 'keywords').respond([]);
+        // fixture rideshare
+        var putGroupData = function() {
+          return {
+            _id: '525a8422f6d0f87f0e407a33',
+            name: 'Python nerds',
+            to: 'Pythonistas!'
+          };
+        };
+
+        // mock group object from form
+        var group = new Groups(putGroupData());
+
+        // mock group in scope
+        scope.group = group;
+
+        // test PUT happens correctly
+        $httpBackend.expectPUT(/groups\/([0-9a-fA-F]{24})$/).respond();
+        
+	// run controller
+        scope.update(true);
+        $httpBackend.flush();
+
+        // test URL location to new object
+        expect($location.path()).toBe('/groups/' + putGroupData()._id);
+
+      }));
+
      it('$scope.remove() should send a DELETE request with a valid groupId ' +
         'and remove the group from the scope', inject(function(Groups) {
 	  $httpBackend.when('GET', 'keywords').respond([]);
