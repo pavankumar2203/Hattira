@@ -17,6 +17,13 @@ angular.module('mean.groups',['localytics.directives']).controller('GroupsContro
       if (!group || !group.created_by) return false;
       return group.created_by === $scope.global.user._id;
     };
+
+   $scope.findMember = function(group) {
+       var arrlen = group.members.length;
+	for(var i=0; i<arrlen; i++)  { if( group.members[i] == $scope.global.user._id) return true; }
+       return false;
+     };
+
     $scope.findkeyword = function(keyword) {
       /*Keywords.get({
         keywordId: keyword
@@ -120,6 +127,5 @@ angular.module('mean.groups',['localytics.directives']).controller('GroupsContro
         $scope.groupeventslist = group.groupeventslist;
       });
     };
-
   }
 ]);

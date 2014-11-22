@@ -21,7 +21,7 @@
             <i class="glyphicon glyphicon-trash"></i>
           </a>
         </span>
-        <span data-ng-if="!hasAuthorization(group)">
+        <span data-ng-if="!findMember(group)">
 	  <a class="btn" data-ng-click="addmembers(group);">
 	    <i class="glyphicon glyphicon-plus"></i>
           </a>
