@@ -13,6 +13,13 @@ angular.module('mean.groups').factory('Groups', ['$resource',
   }
 ]);
 
+angular.module('mean.groups').factory('GetKeywords', ['$resource',
+  function($resource){
+	return $resource('keywords',{
+	},{'getall':{method:'GET',isArray:true}});
+}
+]);
+
 angular.module('mean.groups').factory('MemberGroups', ['$resource',
   function($resource) {
     return $resource('memberprofile', {

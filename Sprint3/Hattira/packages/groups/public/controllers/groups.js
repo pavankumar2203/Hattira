@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('mean.groups',['localytics.directives']).controller('GroupsController', ['$scope', '$http', '$stateParams', '$location', 'Global', 'Groups', 'Rsvp', 'Keywords', 'MemberGroups',
-  function($scope, $http, $stateParams, $location, Global, Groups, Rsvp, Keywords, MemberGroups) {
+angular.module('mean.groups',['localytics.directives']).controller('GroupsController', ['$scope', '$http', '$stateParams', '$location', 'Global', 'Groups', 'Rsvp', 'GetKeywords', 'MemberGroups',
+  function($scope, $http, $stateParams, $location, Global, Groups, Rsvp, GetKeywords, MemberGroups) {
       $scope.sKeyword = [];
       $scope.keywords_lang = {
         python: 'Python',
@@ -11,21 +11,18 @@ angular.module('mean.groups',['localytics.directives']).controller('GroupsContro
         coffee: 'Coffee',
         erlanng: 'Erlang'
       };
-    $scope.state = ['one'];
+    GetKeywords.getall(function(data){ console.log(data);});
     $scope.global = Global;
-    $http.get('/keywords').success(function(keywords) {
-         $scope.keywords = keywords;
-      }); 
     $scope.hasAuthorization = function(group) {
       if (!group || !group.created_by) return false;
       return group.created_by === $scope.global.user._id;
     };
     $scope.findkeyword = function(keyword) {
-      Keywords.get({
+      /*Keywords.get({
         keywordId: keyword
       }, function(keyword) {
         $scope.chosenkeyword = keyword;
-      });
+      });*/
     };
 
     $scope.create = function(isValid) {
