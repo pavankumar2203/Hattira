@@ -20,16 +20,16 @@ describe('<Unit Test>', function() {
   describe('Model Group:', function() {
     beforeEach(function(done) {
       user = new User({
-        name: 'Full name',
-        email: 'test@test.com',
-        username: 'user',
-        password: 'password'
+        name: 'Stephen Hawking',
+        email: 'shawking@test.com',
+        username: 'shawking',
+        password: 'time'
       });
 
       user.save(function() {
         group = new Group({
-          name: 'Group Name',
-          description: 'Group Description',
+          name: 'Relativity',
+          description: 'Nerds who are into Gravitational Relativity',
           created_by: user
         });
 
@@ -41,8 +41,8 @@ describe('<Unit Test>', function() {
       it('should be able to save without problems', function(done) {
         return group.save(function(err) {
           should.not.exist(err);
-          group.name.should.equal('Group Name');
-          group.description.should.equal('Group Description');
+          group.name.should.equal('Relativity');
+          group.description.should.equal('Nerds who are into Gravitational Relativity');
           group.created_by.should.not.have.length(0);
           group.created.should.not.have.length(0);
           done();
