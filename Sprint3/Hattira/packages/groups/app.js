@@ -15,6 +15,16 @@ Groups.register(function(app, auth, database) {
 
   //We enable routing. By default the Package Object is passed to the routes
   Groups.routes(app, auth, database);
+  Groups.menus.add({
+    'roles': ['authenticated'],
+    'title': 'Groups',
+    'link': 'all groups'
+  });
+  Groups.menus.add({
+    'roles': ['authenticated'],
+    'title': 'Create New Group',
+    'link': 'create group'
+  });
 
   //We are adding a link to the main menu for all authenticated users
  
