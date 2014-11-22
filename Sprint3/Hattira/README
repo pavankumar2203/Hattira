@@ -9,12 +9,9 @@ Welcome to Hattira!
 
 
 - Tests -
+* Run all tests using 'npm test'
+
 
 * Tests for Client side code written in Angular JS
 ** Tests are written in Jasmine and Karma is used as a Test runner
 ** To run tests ' ./node_modules/karma/bin/karma start'
-
-
-* Test Server side code written in NodeJS
-** npm test
-

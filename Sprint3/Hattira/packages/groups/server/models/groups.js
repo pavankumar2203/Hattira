@@ -35,7 +35,8 @@ var GroupSchema = new Schema({
   }],
   created_by: {
     type: Schema.ObjectId,
-    ref: 'User'
+    ref: 'User',
+    required:true
   },
   groupevents: [
   {
@@ -54,6 +55,11 @@ GroupSchema.path('name').validate(function(title) {
 GroupSchema.path('description').validate(function(content) {
   return !!content;
 }, 'Description cannot be blank');
+
+GroupSchema.path('created_by').validate(function(created_by) {
+  return !!created_by;
+}, 'Created by cannot be blank');
+
 
 /**
  * Statics
