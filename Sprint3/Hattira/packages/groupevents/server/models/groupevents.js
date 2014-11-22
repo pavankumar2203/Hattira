@@ -8,9 +8,9 @@ var mongoose = require('mongoose'),
 
 
 /**
- * Event Schema
+ * GroupEvent Schema
  */
-var EventSchema = new Schema({
+var GroupEventSchema = new Schema({
   event_time: {
     type: Date
   },
@@ -65,29 +65,29 @@ var EventSchema = new Schema({
 /**
  * Validations
  */
-EventSchema.path('name').validate(function(title) {
+GroupEventSchema.path('name').validate(function(title) {
   return !!title;
 }, 'Name cannot be blank');
 
-EventSchema.path('description').validate(function(content) {
+GroupEventSchema.path('description').validate(function(content) {
   return !!content;
 }, 'Description cannot be blank');
 
 
-EventSchema.path('event_time').validate(function(event_time) {
+GroupEventSchema.path('event_time').validate(function(event_time) {
   return !!event_time;
 }, 'Event date and time cannot be empty');
 
-EventSchema.path('venue').validate(function(venue) {
+GroupEventSchema.path('venue').validate(function(venue) {
   return !!venue;
 }, 'Venue cannot be blank');
 /**
  * Statics
  */
-EventSchema.statics.load = function(id, cb) {
+GroupEventSchema.statics.load = function(id, cb) {
   this.findOne({
     _id: id
   }).populate('created_by', 'name username').exec(cb);
 };
 
-mongoose.model('GroupEvents', EventSchema);
+mongoose.model('GroupEvent', GroupEventSchema);
