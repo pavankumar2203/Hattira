@@ -3,7 +3,7 @@
 var mean = require('meanio');
 var mongoose = require('mongoose'),
   Profile = mongoose.model('Profile'),
-  GroupEvents = mongoose.model('GroupEvents'),
+  GroupEvents = mongoose.model('GroupEvent'),
   Group = mongoose.model('Group');
 
 

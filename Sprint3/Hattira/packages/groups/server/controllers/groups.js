@@ -5,7 +5,7 @@
  */
 var mongoose = require('mongoose'),
   Group = mongoose.model('Group'),
-  GroupEvents = mongoose.model('GroupEvents'),
+  GroupEvents = mongoose.model('GroupEvent'),
   _ = require('lodash');
 
 

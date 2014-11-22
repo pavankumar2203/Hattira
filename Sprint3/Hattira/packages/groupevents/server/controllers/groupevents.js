@@ -4,7 +4,7 @@
  * Module dependencies.
  */
 var mongoose = require('mongoose'),
-  GroupEvents = mongoose.model('GroupEvents'),
+  GroupEvents = mongoose.model('GroupEvent'),
   Group = mongoose.model('Group'),
   _ = require('lodash');
 
