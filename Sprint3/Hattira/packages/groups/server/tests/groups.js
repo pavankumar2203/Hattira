@@ -21,7 +21,7 @@ describe('<Unit Test>', function() {
     beforeEach(function(done) {
       user = new User({
         name: 'Stephen Hawking',
-        email: 'shawking@test.com',
+        email: 'shawking@oxford.uk',
         username: 'shawking',
         password: 'time'
       });
