@@ -1,0 +1,30 @@
+body {
+	background: url('../img/homepage.jpg') no-repeat center center fixed; -webkit-background-size: cover !important;-moz-background-size: cover !important;-o-background-size: cover !important;background-size: cover !important;height: 520px;width: 100%;position: relative;opacity:0.9;
+}
+
+header h3 {
+	font-size: 3em;
+	font-weight: bold;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	margin: 0 auto;
+	font-family: 'Parisienne', cursive;
+	color: black;
+}
+
+form legend{
+	width: 58%;
+	text-align: center;
+	margin-right: 10%;
+	color: black;
+}
+form {
+	padding-top: 25%;
+	width: 50%;
+	margin-left: 25%;
+}
+form label {
+	color: black;
+}
