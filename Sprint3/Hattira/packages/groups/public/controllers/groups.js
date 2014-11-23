@@ -20,7 +20,7 @@ angular.module('mean.groups',['localytics.directives']).controller('GroupsContro
 
    $scope.findMember = function(group) {
        var arrlen = group.members.length;
-	for(var i=0; i<arrlen; i++)  { if( group.members[i] == $scope.global.user._id) return true; }
+	for(var i=0; i<arrlen; i+=1)  { if( group.members[i] === $scope.global.user._id) return true; }
        return false;
      };
 
