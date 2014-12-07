@@ -1,0 +1,27 @@
+<section data-ng-controller="EventsController" data-ng-init="find()">
+  Search: <input ng-model="searchText">
+  <ul class="events unstyled">
+    <li data-ng-repeat="event in events | filter:searchText">
+      <span>{{event.created | date:'medium'}}</span> /
+      <span>{{event.user.name}}</span>
+      <h2>
+        <a data-ng-href="#!/events/{{event._id}}">{{event.name}}</a>
+        <span data-ng-if="hasAuthorization(event)">
+          <a class="btn" href="/#!/events/{{event._id}}/edit">
+            <i class="glyphicon glyphicon-edit"></i>
+          </a>
+          <a class="btn" data-ng-click="remove(event);">
+            <i class="glyphicon glyphicon-trash"></i>
+          </a>
+        </span>
+        <span data-ng-if="!hasAuthorization(event)">
+	  <a class="btn" data-ng-click="addmembers(event);">
+	    <i class="glyphicon glyphicon-plus"></i>
+          </a>
+        </span>
+      </h2>
+      <div>{{event.content}}</div>
+    </li>
+  </ul>
+  <h1 data-ng-hide="!events || events.length">No events yet. <br> Why don't you <a href="/#!/events/create">Create One</a>?</h1>
+</section>

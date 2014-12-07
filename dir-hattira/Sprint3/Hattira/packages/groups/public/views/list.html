@@ -1,0 +1,37 @@
+<section class="welcome container-fluid" data-ng-controller="GroupsController" data-ng-init="find()">
+       <div class="info col-md-12">
+      <div class="docs">
+  <input class="pac-input controls" type="text" placeholder="Search Box" ng-model="searchText">
+ </div>
+   </div>
+      <div class="col-md-12">
+  <div class="parentdiv">
+  <ul class="groups unstyled">
+    <div  data-ng-repeat="group in groups | filter:searchText" class="childdiv" style="float:none">
+    
+      <span>{{group.created | date:'medium'}}</span>
+      <span>{{group.user.name}}</span>
+      <h2>
+        <a data-ng-href="#!/groups/{{group._id}}">{{group.name}}</a>
+        <span data-ng-if="hasAuthorization(group)">
+          <a class="btn" href="/#!/groups/{{group._id}}/edit">
+            <i class="glyphicon glyphicon-edit"></i>
+          </a>
+          <a class="btn" data-ng-click="remove(group);">
+            <i class="glyphicon glyphicon-trash"></i>
+          </a>
+        </span>
+        <span data-ng-if="!findMember(group)">
+	  <a class="btn" data-ng-click="addmembers(group);">
+	    <i class="glyphicon glyphicon-plus"></i>
+          </a>
+        </span>
+      </h2>
+      <div>{{group.content}}</div>
+  
+    </div>
+  </ul>
+  </div>
+  <h1 data-ng-hide="!groups || groups.length">No groups yet. <br> Why don't you <a href="/#!/groups/create">Create One</a>?</h1>
+ </div>
+</section>

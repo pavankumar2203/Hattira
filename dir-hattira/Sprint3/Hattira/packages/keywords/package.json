@@ -1,0 +1,15 @@
+{
+  "name": "keywords",
+  "version": "0.0.1",
+  "description": "List of all keywords",
+  "author": {
+    "name": "Hattira"
+  },
+  "mean": "0.4.x",
+  "engines": {
+    "node": "0.10.x",
+    "npm": "1.4.x"
+  },
+  "dependencies": {},
+  "license": "MIT"
+}

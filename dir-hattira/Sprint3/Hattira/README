@@ -1,0 +1,18 @@
+Welcome to Hattira!
+You can see it live here - http://hattira.herokuapp.com
+
+- Setup -
+* sudo npm install
+* bower install
+* grunt
+* install mongo and start by "mongod"
+* http://localhost:3000/
+
+
+- Tests -
+* Run all tests using 'npm test'
+
+
+* Tests for Client side code written in Angular JS
+** Tests are written in Jasmine and Karma is used as a Test runner
+** To run tests ' ./node_modules/karma/bin/karma start'

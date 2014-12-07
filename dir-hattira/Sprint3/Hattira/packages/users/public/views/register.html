@@ -1,0 +1,79 @@
+<div data-ng-controller="RegisterCtrl">
+    <div ng-repeat="error in registerError">
+        <div class="alert alert-danger animated fadeIn">{{error.msg}}</div>
+    </div>
+    <div class="alert alert-danger animated fadeIn" ng-show="usernameError">{{usernameError}}</div>
+    <div class="alert alert-danger animated fadeIn" ng-show="emailError">{{emailError}}</div>
+    <div class="login-form__left" >
+    <form id="register_form" ng-submit="register()">
+        <h2>Sign Up</h2>
+
+        <div class="input-wrapper">
+            <input required id="name" type="text" name="name" placeholder="Full Name"
+                   ng-model="user.name">
+
+            <div class="error_message">Please enter a correct info #</div>
+            <span class="pic user"></span>
+        </div>
+
+                <div class="input-wrapper">
+            <input required id="Bio_block" type="text-field" name="Bio" placeholder="Bio"
+                   ng-model="user.Bio">
+
+            <div class="error_message">Please enter something about yourself #</div>
+            <span class="pic Bio"></span>
+        </div>
+
+                <div class="input-wrapper">
+            <input required id="Interests_block" type="text" name="Interests" placeholder="Interests"
+                   ng-model="user.Interests">
+
+            <div class="error_message">Please enter atleast one Interest #</div>
+            <span class="pic Interest"></span>
+        </div>
+
+
+        <div class="input-wrapper">
+            <input required id="email_block" type="email" name="email" placeholder="Email Address"
+                   ng-model="user.email">
+
+            <div class="error_message">Please enter a correct info #</div>
+            <span class="pic email"></span>
+        </div>
+
+        <div class="input-wrapper">
+            <input required id="username" type="text" name="username" placeholder="Username"
+                   ng-model="user.username">
+
+            <div class="error_message">Please enter a correct info #</div>
+            <span class="pic username"></span>
+        </div>
+
+        <div class="input-wrapper">
+            <input required id="password_block" name="password" type="password"
+                   placeholder="{{input.placeholder}}" ng-model="user.password">
+
+            <div class="error_message">Please enter a correct info #</div>
+        </div>
+        <div class="input-wrapper">
+            <input required id="confirm_password" name="confirm_password" type="password"
+                   placeholder="{{input.placeholderConfirmPass}}" ng-model="user.confirmPassword">
+
+            <div class="error_message">Please enter a correct info #</div>
+        </div>
+
+        <div class="button_register">
+            <button type="submit" class="submit_button">Sign up</button>
+
+        </div>
+
+    </form>
+  </div>
+        <div class="login-form__center">
+        <p>or</p>
+    </div>
+    <div class="row login-form__right ">
+            <p>Already have an account?</p>
+            <a ui-sref='auth.login'>Log in</a>
+    </div>
+</div>
