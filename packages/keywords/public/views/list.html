@@ -1,0 +1,18 @@
+<section data-ng-controller="KeywordsController" data-ng-init="find()">
+  <ul class="keywords unstyled">
+    <li data-ng-repeat="keyword in keywords">
+      <h2>
+        <a data-ng-href="#!/keywords/{{keyword._id}}">{{keyword.keyword_name}}</a>
+        <span data-ng-if="hasAuthorization(keyword)">
+          <a class="btn" href="/#!/keywords/{{keyword._id}}/edit">
+            <i class="glyphicon glyphicon-edit"></i>
+          </a>
+          <a class="btn" data-ng-click="remove(keyword);">
+            <i class="glyphicon glyphicon-trash"></i>
+          </a>
+        </span>
+      </h2>
+    </li>
+  </ul>
+  <h1 data-ng-hide="!keywords || keywords.length">No keywords yet. <br> Why don't you <a href="/#!/keywords/create">Create One</a>?</h1>
+</section>

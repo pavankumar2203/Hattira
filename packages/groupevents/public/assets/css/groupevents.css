@@ -1,0 +1,49 @@
+h1 {
+	text-align: center
+}
+ul.groups li:not(:last-child) {
+	border-bottom: 1px solid #ccc
+}
+.groupForm {
+	padding-top:2%
+}
+
+.childdivuber {
+	float: left;
+margin: 10px;
+border-radius: 10px;
+padding: 10px;
+background: rgb(229, 227, 227);
+}
+
+
+.eventsform {
+	margin-left: 20%
+}
+
+.childdivgroup {
+	float: none;
+	
+}
+
+.carousel-demo-game {
+    height: 250px;
+}
+
+.carousel-demo-game ul[rn-carousel] {
+    overflow:hidden;
+    width:450px;
+    height:250px;
+    margin:0;
+    display:inline-block;
+}
+
+.bgimage {
+	height: 250px;
+
+}
+
+.eventform {
+	border-radius: 5px;
+	height: 640px;
+}

@@ -1,0 +1,72 @@
+
+
+
+<section data-ng-controller="GroupsController" data-ng-init="findOne()">
+
+<div class="fileinput fileinput-new" data-provides="fileinput" style="margin-left: 40%;">
+  <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
+    <img src="images/{{group.grouppictureURL}}"  alt="...">
+  </div>
+  <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>
+  <div>
+    <span class="btn btn-default btn-file"><span class="fileinput-new">Select image</span><span class="fileinput-exists">Change</span><input type="file" data-ng-file-select="onFileSelect($files)" accept="image/png, image/jpeg"></span>
+    <span data-ng-if="uploadInProgress">Upload progress: {{ uploadProgress }}</span>
+    <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+  </div>
+</div>
+
+  <section class="welcome container-fluid" >
+
+    <div class="col-md-12 row">
+      <div class="info col-md-12">
+        <div class="docs">
+
+
+          <div class="parentdiv" style="height: 600px;">
+              <div  class="childdivgroup">
+            
+                <label class="col-md-5">Group Name :</label>
+                <h3>{{group.name}}</h3>
+                  <div data-ng-if="hasAuthorization(group)">
+                  <a class="btn" href="/#!/groups/{{group._id}}/edit">
+                    <i class="glyphicon glyphicon-edit"></i>
+                  </a>
+                  <a class="btn" data-ng-click="remove(group);">
+                    <i class="glyphicon glyphicon-trash"></i>
+                  </a>
+                </div>
+
+                <label class="col-md-5 control-label">Group Description :</label>
+                <div>{{group.description}}</div>
+
+                <div class="">
+                <a href="/#!/groupevents/{{group._id}}/create"><button type="submit" class="btn-success btn">Create Event</button></a>
+              </div>
+
+               <hr>
+                  <div class="welcome-sprite"></div>
+           <h3>List of events !</h3>
+           <hr>
+
+<div class="parentdiv">
+    <div data-ng-repeat="groupevent in groupeventslist | filter:searchText" class="childdiv">
+         <span>{{groupevent.event_time.toString().split('T')[0]}}</span> <br>
+         <span>{{groupevent.event_from}} - {{groupevent.event_to}} </span> 
+        <h2><a data-ng-href="#!/groupevents/{{groupevent._id}}">{{groupevent.name}}</a></h2>
+      <div>{{groupevent.description}}</div>
+              <span>
+            <a class="btn" data-ng-click="RSVP(groupevent);">
+          RSVP
+          </a>
+        </span>
+    </div>
+</div>
+    
+    </div>
+</div>
+</div>
+    
+    </div>
+</div>
+</section>
+</section>

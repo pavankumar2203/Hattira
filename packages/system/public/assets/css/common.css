@@ -1,0 +1,111 @@
+.circleBase {
+    border-radius: 50%;
+    behavior: url(PIE.htc); /* remove if you don't care about IE8 */
+}
+
+.childdiv{
+    float: left;
+    margin: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    background:white;
+    opacity: 0.8;
+}
+.parentdiv{
+    clear:both;
+}
+.type1 {
+    width: 100px;
+    height: 100px;
+    background: white;
+    border: 3px solid rgb(178, 178, 178);
+    margin: 0 auto;
+}
+
+.logo {
+    text-align: center;
+}
+
+.subtitle {
+	padding-left: 40%;
+	font-weight: bold;
+	font-size: 1.5em !important;
+    font-style: italic;
+	color: black;
+}
+.boxes {
+    height: 200px;
+}
+
+.numbers {
+    text-align: center;
+}
+.page-header {
+    padding-bottom: 0 !important;
+    margin: 0 !important;
+    border-bottom: 0 !important;
+}
+.page-header .navbar-nav {
+    float: right;
+}
+.page-header > div > div, .page-header > div > ul {
+    display: inline-block;
+}
+.text-edit {
+    padding: 13px 0 0 0;
+}
+.account {
+    text-align:right;
+}
+.account > div, .account > ul {
+    text-align: left;
+}
+.navbar .nav > li > a.brand {
+    padding-left: 20px;
+    margin-left: 0
+}
+.content {
+    margin-top: 0;
+    width: 100%
+}
+.logo a {
+    font-family: Abel;
+    color:black;
+    transform: rotate(-7deg);
+    font-size: 2.5em;
+    background: brown;
+}
+
+.left ul li{
+    color:black;
+    font-size: 1.1em;
+}
+.left ul li a {
+    color:black!important;
+}
+.account a {
+    color:black!important;
+}
+ .navbar-inverse .navbar-nav > .open > a:focus{
+    background-color: #fff;
+}
+footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	height: 30px;
+	width: 100%;
+	background: #ddd;
+	-webkit-box-shadow: 0 8px 6px 6px black;
+	-moz-box-shadow: 0 8px 6px 6px black;
+	box-shadow: 0 8px 6px 6px black
+}
+footer p {
+	padding: 5px 0 12px 10px
+}
+/*.ng-invalid.ng-dirty{*/
+    /*border-color:#FA787E;*/
+/*}*/
+/*.ng-valid.ng-dirty{*/
+    /*border-color:#78FA89;*/
+/*}*/

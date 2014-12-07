@@ -1,0 +1,12 @@
+<div data-ng-controller="ClickRegistrationCtrl" >
+  <div ng-repeat="error in validationError">
+    <div class="alert alert-danger animated fadeIn">{{error.msg}}</div>
+  </div>
+  <h1>Registration complete. Click to login</h1>
+  <form ng-submit="clickedregistration()" class="reset form-horizontal">
+    <div class="form-group save">
+     <button type="submit" class="btn btn-primary" style="margin-left: 600px;">Login</button>
+   </div>
+ </form>
+</div>
+

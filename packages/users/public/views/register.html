@@ -1,0 +1,69 @@
+<div data-ng-controller="RegisterCtrl">
+    <div ng-repeat="error in registerError">
+        <div class="alert alert-danger animated fadeIn">{{error.msg}}</div>
+    </div>
+    <div class="alert alert-danger animated fadeIn" ng-show="usernameError">{{usernameError}}</div>
+    <div class="alert alert-danger animated fadeIn" ng-show="emailError">{{emailError}}</div>
+    <div class="login-form__left" >
+    <form id="register_form" ng-submit="register()" name="registrationform">
+      <div class="alert alert-{{response.status}} animated fadeIn" ng-show="response.message">{{response.message}}</div>
+        <h2>Sign Up</h2>
+
+        <div class="input-wrapper">
+            <input required id="name" type="text" name="name" placeholder="Full Name"
+                   ng-model="user.name" required>
+
+            <div class="error_message">Please enter a correct info #</div>
+              <span class="pic user"></span>
+       </div>
+
+        <div class="input-wrapper">
+            <input id="Bio_block" type="text-field" name="Bio" placeholder="Bio"
+                   ng-model="user.Bio">
+        </div>
+
+        <div class="input-wrapper">
+         <ui-select multiple ng-model="multi.selectedKeywords" theme="bootstrap" ng-disabled="disabled" close-on-select="false" style="width: 400px;">
+          <ui-select-match placeholder="Select interests">{{$item.keyword_name}}</ui-select-match>
+            <ui-select-choices repeat="keyword in keywords | filter: $select.search">
+            <div ng-bind-html="keyword.keyword_name | highlight: $select.search"></div>
+          </ui-select-choices>
+         </ui-select>
+        </div>
+
+
+        <div class="input-wrapper">
+            <input required id="email_block" type="email" name="email" placeholder="Email Address"
+                   ng-model="user.email" required>
+
+            <div class="error_message">Please enter a correct info #</div>
+        </div>
+
+        <div class="input-wrapper">
+            <input required id="username" type="text" name="username" placeholder="Username"
+                   ng-model="user.username" required>
+            <div class="error_message">Please enter a correct info #</div>
+            <span class="pic username"></span>
+        </div>
+
+        <div class="input-wrapper">
+            <input required id="password_block" name="password" type="password"
+                   placeholder="{{input.placeholder}}" ng-model="user.password">
+            <div class="error_message">Please enter a correct info #</div>
+        </div>
+
+        <div class="input-wrapper">
+            <input required id="confirm_password" name="confirm_password" type="password"
+                   placeholder="{{input.placeholderConfirmPass}}" ng-model="user.confirmPassword" required>
+            <div class="error_message">Please enter a correct info #</div>
+        </div>
+        <div class="button_register">
+            <button type="submit" class="btn btn-primary" ng-disabled="registrationform.$invalid">Sign up</button>
+            <p>Already have an account?</p>
+            <a ui-sref='auth.login'>Log in</a>
+        </div>
+        <div class="woman_ninja_bottom">
+            <img src="/theme/assets/img/woman_ninja.png" alt="#">
+        </div>
+    </form>
+</div>

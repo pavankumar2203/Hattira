@@ -1,0 +1,159 @@
+  <div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
+
+
+    </div>
+    <div class="col-md-10">
+      
+<section data-ng-controller="EventsController" data-ng-init="findOne()">
+
+
+<div class="fileinput fileinput-new" data-provides="fileinput" style="margin-left: 40%;">
+  <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
+    <img src="images/{{event.eventpictureURL}}"  alt="...">
+  </div>
+  <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>
+  <div>
+    <span class="btn btn-default btn-file"><span class="fileinput-new">Select image</span><span class="fileinput-exists">Change</span><input type="file" data-ng-file-select="oneventImageSelect($files)" accept="image/png, image/jpeg"></span>
+    <span data-ng-if="uploadInProgress">Upload progress: {{ uploadProgress }}</span>
+    <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+  </div>
+</div>
+
+
+
+        <div class="form showeventform">
+
+  <form name="groupForm" class="form-horizontal col-md-6 groupForm eventsform" role="form" data-ng-submit='create(groupForm.$valid)'novalidate>
+    <div class="form-group" ng-class="{ 'has-error' : submitted && groupForm.name.$invalid }">
+      <label class="col-md-5 control-label"> Event Name</label>
+      <div class="col-md-7">
+        
+          <h2>{{event.name}}</h2>
+
+                  <div data-ng-if="hasAuthorization(event)">
+          <a class="btn" href="/#!/events/{{event._id}}/edit">
+            <i class="glyphicon glyphicon-edit"></i>
+          </a>
+          <a class="btn" data-ng-click="remove(event);">
+            <i class="glyphicon glyphicon-trash"></i>
+          </a>
+        </div>
+
+    </div>
+    <div class="form-group" ng-class="{ 'has-error' : submitted && groupForm.description.$invalid }">
+      <label mean-token="'create-description'" for="description" class="col-md-5 control-label">Event Description</label>
+      <div class="col-md-7">
+            <div>{{event.description}}</div>
+      </div>
+    </div>
+
+
+    <div class="form-group" ng-class="{ 'has-error' : submitted && groupForm.event_time.$invalid }">
+      <label mean-token="'create-event_time'"  class="col-md-5 control-label"> Event time</label>
+      <div class="col-md-7">
+            <div>{{event.event_time.toString().split('T')[0]}}</div>
+      </div>
+    </div>
+
+
+   <div class="form-group" ng-class="{ 'has-error' : submitted && groupForm.event_from.$invalid }">
+      <label mean-token="'create-event_from'"  class="col-md-5 control-label"> Event from</label>
+      <div class="col-md-7">
+            <div>{{event.event_from}}</div>
+      </div>
+    </div>
+   <div class="form-group" ng-class="{ 'has-error' : submitted && groupForm.event_to.$invalid }">
+      <label mean-token="'create-event_to'"  class="col-md-5 control-label"> Event to</label>
+      <div class="col-md-7">
+            <div>{{event.event_to}}</div>
+      </div>
+    </div>
+
+
+    <div class="form-group" ng-class="{ 'has-error' : submitted && groupForm.venue.$invalid }">
+      <label mean-token="'create-venue'"  class="col-md-5 control-label"> Venue Name</label>
+      <div class="col-md-7">
+        
+          <div>{{event.venue}}</div>
+      </div>
+    </div>
+
+ 
+  
+      <div class="button_register">
+        <button mean-token="'create-submit'" type="submit" class="submit_button" style=" margin-left: 100px;    margin-top: 10px;" data-ng-click="RSVP(event);">RSVP</button>
+      </div>
+
+
+<hr>
+
+      <div class="parentdiv">
+    <div class="childdivuber">
+
+<div class="uber">
+  <h3> Estimates from your current location to the event*</h3>
+     <div class="form-group" >
+      <label class="col-md-5 control-label"> Price Estimate</label>
+      <div class="col-md-7">
+              <div>{{priceestimate}}</div>
+      </div>
+    </div>
+
+       <div class="form-group">
+      <label class="col-md-5 control-label"> Time Estimate</label>
+      <div class="col-md-7">
+              <div>{{timeestimate}} seconds</div>
+      </div>
+    </div>
+
+  <div class="distanceestimate">
+      * Destination needs to be within 100 miles from source (sponsored by UBER) 
+  </div>
+</div>
+
+    </div>
+  </div>
+
+
+  </form>
+
+
+<hr>
+
+
+
+<br>
+<br>
+<div>
+  <span class="btn btn-default btn-file"><span class="fileinput-new">Upload an album here and refresh</span><input type="file" ng-file-select="onFileSelect($files)" multiple accept="image/*"></span>
+  <div class="button" ng-file-select="onFileSelect($files)" data-multiple="true"></div>
+  <!--<button ng-click="upload.abort()">Cancel Upload</button>-->
+</div>
+
+<br>
+
+ <div class="carousel-demo-game" id="name">
+            <ul ng-repeat="carousel in carousels" rn-carousel rn-carousel-transition="hexagon" rn-carousel-buffered class="carousel1">
+                <li ng-repeat="slide in slides track by slide.id" ng-class="'id-' + slide.id">
+                    <div ng-style="{'background-image': 'url(' + slide.img + ')' , 'background-size': '450px 250px'}"  class="bgimage">
+                        #{{ slide.id }}
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+
+</div>
+</section>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+

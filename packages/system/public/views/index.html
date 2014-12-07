@@ -1,0 +1,76 @@
+<div data-ng-show="global.authenticated">
+
+<section class="welcome container-fluid" data-ng-controller="IndexController" data-ng-init="fillnumbers()">
+
+    <div class="col-md-12 row">
+    <div class="info col-md-12">
+      <div class="docs">
+        <div class="welcome-sprite"></div>
+
+        <h3>Hi there !</h3>
+        <h3>You have {{events}} events !</h3>
+
+              <div class="parentdiv">
+    <div data-ng-repeat="event in eventsList" class="childdiv">
+      <span>{{event.event_time.toString().split('T')[0]}}</span><br> 
+      <span>{{event.event_from}} - {{event.event_to}} </span> 
+        <h2><a data-ng-href="#!/groupevents/{{event._id}}">{{event.name}}</a></h2>
+      <div>{{event.description}}</div>
+    </div>
+  </div>
+</div>
+
+
+ 
+
+
+
+<div class="community">
+  <div class="container-fluid">
+  <div class="row community">
+  <div >
+          <div>
+        <a href="#!/profile"><h2>Your groups</h2></a> 
+      </div>
+
+  
+  </div>
+  
+      <div class="col-md-4 boxes">
+        <h2>Events near you</h2>
+          <div data-ng-repeat="event in nevents">
+            <a href="#!/groupevents/{{event._id}}">{{event.name}}</a>
+          </div>
+      </div>
+  </div>
+ </div>
+</div>
+</div>
+  <div class="info col-md-12">
+    <h2>Recommended Groups</h2>
+    <hr>
+      <div class="parentdiv">
+    <div data-ng-repeat="group in groups" class="childdiv">
+      <span>{{group.created | date:'medium'}}</span> 
+      <span>{{group.user.name}}</span>
+        <h2><a data-ng-href="#!/groups/{{group._id}}">{{group.name}}</a></h2>
+      <div>{{group.content}}</div>
+    </div>
+  </div>
+  </div>
+  </div>
+</section>
+</div>
+
+<div data-ng-hide="global.authenticated">
+  <section class="welcome container-fluid">
+  <h1 id="title">Hattira</h1>
+     <p class="subtitle">Events around you!</p>
+     <div class="clear"></div>
+     <div class="login-details">
+       <p><a class="auth-join" ui-sref='auth.register'>Join</a></p>
+       <p><a class="auth-login" ui-sref='auth.login'>Login</a></p>
+    </div>
+  </a>
+</section>
+</div>
