@@ -24,7 +24,7 @@ module.exports = {
     service: 'Gmail', // Gmail, SMTP
     auth: {
       user: 'edondemand7@gmail.com',
-      pass: 'pa1heinz'
+      pass: 'password goes here'
     }
   }
 };
